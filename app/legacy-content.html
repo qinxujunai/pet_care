@@ -1,0 +1,377 @@
+<header class="site-header">
+    <nav class="nav shell" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="宠瑾安首页">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="/assets/images/brand-chongjinan-dog-mark.png" alt="">
+        </span>
+        <span class="brand-text">
+          <strong>宠瑾安</strong>
+          <small>猫犬护理</small>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">护理项目</a>
+        <a href="#environment">护理空间</a>
+        <a href="#pricing">服务价格</a>
+        <a href="#reviews">到店反馈</a>
+        <a href="#location">门店位置</a>
+      </div>
+      <div class="nav-actions">
+        <a class="icon-btn" href="tel:13800000000" aria-label="拨打电话">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.7.6 2.5a2 2 0 0 1-.5 2.1L8 9.5a16 16 0 0 0 6.5 6.5l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.6.5 2.5.6a2 2 0 0 1 1.7 2Z"/></svg></span>
+        </a>
+        <a class="btn btn-primary" href="#booking">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m9 16 2 2 4-5"/></svg></span>
+          预约护理
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="宠瑾安预约">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>宠瑾安</h1>
+          <p>把清洁做干净，把修剪做得体，把每一次触碰做得有分寸。宠瑾安提供预约制猫犬护理，从皮毛检查、沐洗吹干到造型复核，按状态安排，不做流水线。</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#booking">
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/><path d="m9 16 2 2 4-5"/></svg></span>
+              预约护理
+            </a>
+            <a class="btn btn-secondary" href="#pricing">
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></span>
+              查看价格
+            </a>
+          </div>
+          <div class="care-notes" aria-label="宠瑾安护理标准">
+            <div class="care-note"><strong>皮毛先行</strong><span>毛结、皮肤、耳道与脚底先看清楚，再决定护理方式。</span></div>
+            <div class="care-note"><strong>造型有度</strong><span>长度、比例与脸型先确认，修剪不套模板。</span></div>
+            <div class="care-note"><strong>一席一宠</strong><span>同一时段专注照看，减少等待与交叉干扰。</span></div>
+          </div>
+        </div>
+
+        <aside class="booking-card" id="booking" aria-label="预约护理表单">
+          <h2>预约护理</h2>
+          <p class="sub">留下基础信息，门店会按宠物状态确认合适时段。</p>
+          <div class="time-row" aria-label="今日可约时段">
+            <button class="time-chip" type="button" aria-pressed="true">10:30</button>
+            <button class="time-chip" type="button" aria-pressed="false">14:00</button>
+            <button class="time-chip" type="button" aria-pressed="false">18:30</button>
+          </div>
+          <form class="booking-form" id="bookingForm">
+            <div class="form-row">
+              <label>联系人
+                <input name="name" autocomplete="name" placeholder="你的称呼" required>
+              </label>
+              <label>手机号
+                <input name="phone" inputmode="tel" autocomplete="tel" placeholder="138 0000 0000" required>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>宠物类型
+                <select name="pet">
+                  <option>小型犬</option>
+                  <option>中大型犬</option>
+                  <option>猫咪</option>
+                  <option>幼宠适应</option>
+                </select>
+              </label>
+              <label>服务项目
+                <select name="service">
+                  <option>基础洗护</option>
+                  <option>精修造型</option>
+                  <option>皮毛护理</option>
+                  <option>牙耳清洁</option>
+                </select>
+              </label>
+            </div>
+            <label>备注
+              <textarea name="note" placeholder="例如：怕吹风、容易紧张、需要剪指甲"></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7Z"/></svg></span>
+              提交预约
+            </button>
+            <div class="form-note" id="formNote" role="status" aria-live="polite"></div>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="shell">
+        <div class="section-head">
+          <h2>从日常清洁到造型管理</h2>
+          <p>洗护、修剪、皮毛护理、幼宠适应，听起来都是常见项目。区别在于判断：毛量、皮肤、骨架、性格和当天状态，会改变一次护理的做法。</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2v6M5 5l4 4M19 5l-4 4M4 13h16"/><path d="M7 13v4a5 5 0 0 0 10 0v-4"/></svg></span>
+              <h3>基础洗护</h3>
+              <p>沐洗、吹干、梳毛、脚底毛、肛门腺与指甲基础清理。</p>
+            </div>
+            <strong>适合周期清洁</strong>
+          </article>
+          <article class="service-card">
+            <div>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 0 2.4-8.4Z"/><path d="m14 7 3-3 3 3-3 3"/></svg></span>
+              <h3>精修造型</h3>
+              <p>按骨架、毛量和脸型确认轮廓，修剪前先说明长度。</p>
+            </div>
+            <strong>不套统一模板</strong>
+          </article>
+          <article class="service-card">
+            <div>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/><path d="M9 12l2 2 4-5"/></svg></span>
+              <h3>皮毛护理</h3>
+              <p>针对换毛期、干燥、毛结和敏感皮肤，调整清洁与梳理方式。</p>
+            </div>
+            <strong>先看状态再处理</strong>
+          </article>
+          <article class="service-card">
+            <div>
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 8-8 8s-8-3-8-8c0-4 3-7 8-10 5 3 8 6 8 10Z"/><path d="M9 13h6M10 17h4"/></svg></span>
+              <h3>幼宠适应</h3>
+              <p>短时段接触水声、风声和工具，逐步建立第一次护理经验。</p>
+            </div>
+            <strong>推荐 3-6 月龄</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="environment">
+      <div class="shell">
+        <div class="section-head">
+          <h2>空间不只是好看</h2>
+          <p>玻璃、灯光、动线和工具收纳，是为了让流程更清楚。前厅、洗护、吹干、安抚和消毒分区独立，减少混乱。</p>
+        </div>
+        <div class="environment-carousel" aria-label="店内环境轮播">
+          <div class="environment-track">
+            <figure class="environment-slide">
+              <img src="/assets/images/environment-salon-overview.png" alt="宠瑾安猫犬护理门店整体空间">
+              <figcaption class="environment-caption">
+                <strong>门店整体空间</strong>
+                <span>前厅、洗护间和产品陈列形成清楚动线，进门先看到秩序。</span>
+              </figcaption>
+            </figure>
+            <figure class="environment-slide">
+              <img src="/assets/images/environment-wash-room.png" alt="高端宠物洗护店透明洗护操作区">
+              <figcaption class="environment-caption">
+                <strong>洗护操作区</strong>
+                <span>玻璃隔断、独立洗护台和工具收纳分区管理，步骤清楚，干扰更少。</span>
+              </figcaption>
+            </figure>
+            <figure class="environment-slide">
+              <img src="/assets/images/environment-drying-styling.png" alt="高端宠物洗护店低噪吹干造型区">
+              <figcaption class="environment-caption">
+                <strong>低噪吹干造型区</strong>
+                <span>吹干箱、造型台和消毒工具区独立摆放，减少交叉干扰。</span>
+              </figcaption>
+            </figure>
+            <figure class="environment-slide">
+              <img src="/assets/images/environment-quiet-care-room.png" alt="高端宠物洗护店独立安抚护理室">
+              <figcaption class="environment-caption">
+                <strong>独立安抚护理室</strong>
+                <span>怕水、怕风或第一次到店的宠物，会安排更少干扰的护理间。</span>
+              </figcaption>
+            </figure>
+            <figure class="environment-slide">
+              <img src="/assets/images/environment-sterilization-prep.png" alt="高端宠物洗护店工具消毒准备区">
+              <figcaption class="environment-caption">
+                <strong>工具消毒准备区</strong>
+                <span>洗护工具、毛巾和护理用品分区收纳，使用前后独立清洁。</span>
+              </figcaption>
+            </figure>
+          </div>
+          <button class="carousel-arrow prev" type="button" aria-label="上一张店内环境">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-arrow next" type="button" aria-label="下一张店内环境">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          <div class="environment-controls" aria-label="切换店内环境图片">
+            <button class="environment-dot" type="button" aria-label="查看门店整体空间" aria-current="true"></button>
+            <button class="environment-dot" type="button" aria-label="查看洗护操作区" aria-current="false"></button>
+            <button class="environment-dot" type="button" aria-label="查看低噪吹干造型区" aria-current="false"></button>
+            <button class="environment-dot" type="button" aria-label="查看独立安抚护理室" aria-current="false"></button>
+            <button class="environment-dot" type="button" aria-label="查看工具消毒准备区" aria-current="false"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <h2>每一步都有判断</h2>
+          <p>先检查，再清洁；先吹透，再修剪。交付时说明这次看到的皮肤、耳道、毛结和造型状态。</p>
+        </div>
+        <div class="process">
+          <article class="step">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
+            <small>01 / 到店检查</small>
+            <h3>先看皮肤、毛结和状态</h3>
+            <p>记录皮肤、耳道、毛结和配合度，再决定护理方式。</p>
+          </article>
+          <article class="step">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 21h10"/><path d="M12 17v4"/><path d="M5.5 3h13l-1.6 9.6A5 5 0 0 1 12 17a5 5 0 0 1-4.9-4.4L5.5 3Z"/></svg></span>
+            <small>02 / 分区清洁</small>
+            <h3>不同位置，不同力度</h3>
+            <p>眼耳口鼻、脚底和身体毛发分开处理，不用一套手法到底。</p>
+          </article>
+          <article class="step">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16"/><path d="M4 18h10"/><path d="M4 6h16"/></svg></span>
+            <small>03 / 吹透再修</small>
+            <h3>毛发吹透，轮廓才稳</h3>
+            <p>先分层吹干和梳开，再进入修剪，避免湿毛影响判断。</p>
+          </article>
+          <article class="step">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+            <small>04 / 交付复核</small>
+            <h3>说明状态，再交付离店</h3>
+            <p>复核轮廓、长度、皮肤和耳道情况，必要时给出下次护理建议。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="pricing">
+      <div class="shell">
+        <div class="section-head">
+          <h2>价格讲在前面</h2>
+          <p>起步价公开展示。费用变动来自体型、毛量、打结程度和护理难度，开始前确认。</p>
+        </div>
+        <div class="pricing">
+          <article class="price-card">
+            <div>
+              <h3>基础洗护</h3>
+              <p>日常清洁维护，适合周期到店的猫犬。</p>
+            </div>
+            <div class="price">¥98<span> 起</span></div>
+            <ul>
+              <li>沐洗、吹干、梳毛</li>
+              <li>指甲、脚底毛、肛门腺</li>
+              <li>基础耳道与眼周清洁</li>
+            </ul>
+          </article>
+          <article class="price-card featured">
+            <div>
+              <h3>精修造型</h3>
+              <p>按骨架、毛量和脸型确认身体线条与面部轮廓。</p>
+            </div>
+            <div class="price">¥198<span> 起</span></div>
+            <ul>
+              <li>含基础洗护全套</li>
+              <li>长度与比例开始前确认</li>
+              <li>完成后复核轮廓状态</li>
+            </ul>
+          </article>
+          <article class="price-card">
+            <div>
+              <h3>皮毛护理</h3>
+              <p>换毛期、干燥、轻微打结或敏感皮肤的进阶护理。</p>
+            </div>
+            <div class="price">¥138<span> 起</span></div>
+            <ul>
+              <li>按状态选择护理浴液</li>
+              <li>毛结分层梳理</li>
+              <li>护理建议与周期提醒</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="shell">
+        <div class="section-head">
+          <h2>好看之外，还有状态</h2>
+          <p>我们希望被记住的，不只是剪完的照片，还有宠物离开时的精神、皮毛和下一次护理建议。</p>
+        </div>
+        <div class="reviews">
+          <div class="review-score">
+            <strong>4.9</strong>
+            <span>来自附近社区客户的到店反馈。多数复约来自清洁、造型和沟通都稳定。</span>
+          </div>
+          <div class="review-list">
+            <article class="review-card">
+              <div class="review-top">
+                <div class="avatar">
+                  <img src="/assets/images/avatar-nuomi-mom.png" alt="糯米家头像">
+                  <span>糯米家</span>
+                </div>
+                <div class="stars" aria-label="五星评价">★★★★★</div>
+              </div>
+              <p>比熊的毛量大，脸型很容易剪塌。这次先确认了长度和轮廓，吹透之后再修，出来的形状干净很多。</p>
+            </article>
+            <article class="review-card">
+              <div class="review-top">
+                <div class="avatar">
+                  <img src="/assets/images/avatar-kele-dad.png" alt="可乐家头像">
+                  <span>可乐家</span>
+                </div>
+                <div class="stars" aria-label="五星评价">★★★★★</div>
+              </div>
+              <p>开始前会先看毛结和皮肤，再说价格。没有临时推项目，修剪过程也会按原先确认的比例来。</p>
+            </article>
+            <article class="review-card">
+              <div class="review-top">
+                <div class="avatar">
+                  <img src="/assets/images/avatar-aju-home.png" alt="阿橘家头像">
+                  <span>阿橘家</span>
+                </div>
+                <div class="stars" aria-label="五星评价">★★★★★</div>
+              </div>
+              <p>猫咪洗护最怕动作太满。这次时间控制得清楚，结束后也说明了耳道和皮肤情况，记录很细。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="location">
+      <div class="shell">
+        <div class="location">
+          <aside class="location-card">
+            <div>
+              <h2>门店位置</h2>
+              <div class="location-meta">
+                <div class="meta-line">
+                  <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                  <span>杭州市余杭区仓前街道向往街 1118 号<br>EFC LIVE 欧美金融广场</span>
+                </div>
+                <div class="meta-line">
+                  <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+                  <span>周一至周日 09:30 - 20:30<br>19:00 后仅接预约客户</span>
+                </div>
+                <div class="meta-line">
+                  <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.7.6 2.5a2 2 0 0 1-.5 2.1L8 9.5a16 16 0 0 0 6.5 6.5l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.6.5 2.5.6a2 2 0 0 1 1.7 2Z"/></svg></span>
+                  <span>电话：138 0000 0000<br>建议至少提前 2 小时预约</span>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="#booking">预约护理</a>
+          </aside>
+          <div class="map-frame" aria-label="宠瑾安门店地图，地址为杭州市余杭区仓前街道向往街1118号 EFC LIVE 欧美金融广场">
+            <img class="map-image" src="/assets/images/location-map-efc-live.png" alt="宠瑾安位于杭州市余杭区仓前街道向往街1118号 EFC LIVE 欧美金融广场的手绘地图">
+            <div class="map-brand-card" aria-hidden="true">
+              <span class="map-brand-dot">宠</span>
+              <strong>宠瑾安</strong>
+              <span>EFC LIVE · 猫犬护理</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">
+      <strong>宠瑾安</strong>
+      <span>猫犬护理 · 清洁与轮廓</span>
+      <span>© 2026 宠瑾安</span>
+    </div>
+  </footer>
