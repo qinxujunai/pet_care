@@ -9,7 +9,6 @@ export function PetCareInteractions() {
   useEffect(() => {
     const form = document.getElementById("bookingForm") as HTMLFormElement | null;
     const note = document.getElementById("formNote");
-    const timeChips = Array.from(document.querySelectorAll<HTMLButtonElement>(".time-chip"));
     const environmentTrack = document.querySelector<HTMLElement>(".environment-track");
     const environmentDots = Array.from(document.querySelectorAll<HTMLButtonElement>(".environment-dot"));
     const environmentPrev = document.querySelector<HTMLButtonElement>(".carousel-arrow.prev");
@@ -129,15 +128,6 @@ export function PetCareInteractions() {
     environmentCarousel?.addEventListener("focusout", resumeCarousel);
     startAutoPlay();
 
-    const chipHandlers = timeChips.map((chip) => {
-      const handler = () => {
-        timeChips.forEach((item) => item.setAttribute("aria-pressed", "false"));
-        chip.setAttribute("aria-pressed", "true");
-      };
-      chip.addEventListener("click", handler);
-      return { chip, handler };
-    });
-
     let resetButtonId: number | undefined;
     const submitHandler = (event: SubmitEvent) => {
       event.preventDefault();
@@ -145,9 +135,11 @@ export function PetCareInteractions() {
 
       const data = new FormData(form);
       const name = String(data.get("name") || "").trim() || "你好";
+      const arrivalTime = String(data.get("arrivalTime") || "").trim();
       const button = form.querySelector<HTMLButtonElement>("button[type='submit']");
+      const arrivalText = arrivalTime ? `，期望 ${arrivalTime.replace("T", " ")} 到店` : "";
 
-      note.textContent = `${name}，预约已收到。宠瑾安会尽快回电确认。`;
+      note.textContent = `${name}${arrivalText}，预约已收到。宠瑾安会尽快回电确认。`;
       if (button) button.textContent = "已提交，等待确认";
 
       resetButtonId = window.setTimeout(() => {
@@ -159,7 +151,6 @@ export function PetCareInteractions() {
 
     return () => {
       dotHandlers.forEach(({ dot, handler }) => dot.removeEventListener("click", handler));
-      chipHandlers.forEach(({ chip, handler }) => chip.removeEventListener("click", handler));
       environmentPrev?.removeEventListener("click", previousHandler);
       environmentNext?.removeEventListener("click", nextHandler);
       environmentTrack?.removeEventListener("transitionend", transitionEndHandler);

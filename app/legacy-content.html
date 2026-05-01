@@ -53,13 +53,11 @@
 
         <aside class="booking-card" id="booking" aria-label="预约护理表单">
           <h2>预约护理</h2>
-          <p class="sub">留下基础信息，门店会按宠物状态确认合适时段。</p>
-          <div class="time-row" aria-label="今日可约时段">
-            <button class="time-chip" type="button" aria-pressed="true">10:30</button>
-            <button class="time-chip" type="button" aria-pressed="false">14:00</button>
-            <button class="time-chip" type="button" aria-pressed="false">18:30</button>
-          </div>
+          <p class="sub">留下基础信息和期望到店时间，门店会按宠物状态确认合适时段。</p>
           <form class="booking-form" id="bookingForm">
+            <label class="arrival-field">期望到店时间
+              <input name="arrivalTime" type="datetime-local" required>
+            </label>
             <div class="form-row">
               <label>联系人
                 <input name="name" autocomplete="name" placeholder="你的称呼" required>
