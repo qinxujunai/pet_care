@@ -1,6 +1,6 @@
 # 宠瑾安
 
-Next.js App Router + TypeScript + Tailwind 项目。
+预约制猫犬护理门店页面，使用 Next.js App Router、TypeScript 和 Tailwind CSS 构建。
 
 ## 运行
 
@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-本地地址固定为：
+本地开发地址固定为：
 
 ```text
 http://127.0.0.1:3000
@@ -21,14 +21,32 @@ http://127.0.0.1:3000
 npm run dev:fresh
 ```
 
-## 项目源
+生产构建与启动：
 
-- 页面内容只维护 `app/legacy-content.html`。
-- 交互逻辑只维护 `app/pet-care-interactions.tsx`。
-- 全局样式只维护 `app/globals.css`。
-- 图片资源只从 `public/assets/images/` 读取。
+```powershell
+npm run build
+npm run start
+```
 
-不要再使用根目录静态 `index.html` 或根目录 `assets/`。它们是迁移前来源，已经移除，避免和 Next.js 运行结果不一致。
+## 维护边界
+
+- 页面内容维护在 `app/legacy-content.html`。
+- 页面交互维护在 `app/pet-care-interactions.tsx`。
+- 全局样式维护在 `app/globals.css`。
+- 页面元数据维护在 `app/layout.tsx`。
+- 图片资源统一放在 `public/assets/images/`，页面中使用 `/assets/images/...` 访问。
+- 当前电话链接仍是占位值 `13800000000`，上线前需要替换为真实门店电话。
+
+## 不入库内容
+
+以下内容属于本地依赖、构建缓存、运行日志或验证截图，不需要提交：
+
+- `node_modules/`
+- `.next/`
+- `.next-dev.log`
+- `.next-dev.err.log`
+- `output/`
+- `.env*`
 
 ## 品牌口径
 
