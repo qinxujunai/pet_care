@@ -9,6 +9,19 @@ export function PetCareInteractions() {
   useEffect(() => {
     const form = document.getElementById("bookingForm") as HTMLFormElement | null;
     const note = document.getElementById("formNote");
+    const arrivalInput = form?.querySelector<HTMLInputElement>("input[name=\"arrivalTime\"]");
+
+    if (arrivalInput) {
+      const tomorrowMorning = new Date();
+      tomorrowMorning.setDate(tomorrowMorning.getDate() + 1);
+      tomorrowMorning.setHours(9, 30, 0, 0);
+      const year = tomorrowMorning.getFullYear();
+      const month = String(tomorrowMorning.getMonth() + 1).padStart(2, "0");
+      const day = String(tomorrowMorning.getDate()).padStart(2, "0");
+      const hours = String(tomorrowMorning.getHours()).padStart(2, "0");
+      const minutes = String(tomorrowMorning.getMinutes()).padStart(2, "0");
+      arrivalInput.value = `${year}-${month}-${day}T${hours}:${minutes}`;
+    }
     const environmentTrack = document.querySelector<HTMLElement>(".environment-track");
     const environmentDots = Array.from(document.querySelectorAll<HTMLButtonElement>(".environment-dot"));
     const environmentPrev = document.querySelector<HTMLButtonElement>(".carousel-arrow.prev");
