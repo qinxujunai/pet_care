@@ -16,4 +16,6 @@ yarn-error.log*
 pnpm-debug.log*
 .next-dev.log
 .next-dev.err.log
+.next-start-*.log
+.next-start-*.err.log
 *.tsbuildinfo

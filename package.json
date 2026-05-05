@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --hostname 127.0.0.1 --port 3000",
-    "dev:fresh": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"Remove-Item -LiteralPath .next -Recurse -Force -ErrorAction SilentlyContinue; npm run dev\"",
+    "dev": "powershell -NoProfile -ExecutionPolicy Bypass -Command \"Remove-Item -LiteralPath .next -Recurse -Force -ErrorAction SilentlyContinue; next dev --hostname 127.0.0.1 --port 3000\"",
+    "dev:cached": "next dev --hostname 127.0.0.1 --port 3000",
+    "dev:fresh": "npm run dev",
     "build": "next build",
     "start": "next start"
   },
