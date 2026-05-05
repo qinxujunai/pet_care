@@ -16,11 +16,21 @@ export function PetCareInteractions() {
     const environmentCarousel = document.querySelector<HTMLElement>(".environment-carousel");
     const environmentSlides = Array.from(document.querySelectorAll<HTMLElement>(".environment-slide"));
     const environmentSlideCount = environmentSlides.length;
+    const reviewCarousel = document.querySelector<HTMLElement>(".review-carousel");
+    const reviewTrack = document.querySelector<HTMLElement>(".review-track");
+    const reviewSlides = Array.from(document.querySelectorAll<HTMLElement>(".review-card"));
+    const reviewDots = Array.from(document.querySelectorAll<HTMLButtonElement>(".review-dot"));
+    const reviewPrev = document.querySelector<HTMLButtonElement>(".review-arrow.prev");
+    const reviewNext = document.querySelector<HTMLButtonElement>(".review-arrow.next");
+    const reviewSlideCount = reviewSlides.length;
     let environmentIndex = 0;
     let environmentPosition = environmentSlideCount > 1 ? 1 : 0;
+    let reviewIndex = 0;
     let isCarouselPaused = false;
+    let isReviewCarouselPaused = false;
     let isEnvironmentAnimating = false;
     let intervalId: number | undefined;
+    let reviewIntervalId: number | undefined;
 
     const firstSlideClone = environmentSlideCount > 1 ? environmentSlides[0].cloneNode(true) : null;
     const lastSlideClone =
@@ -128,6 +138,66 @@ export function PetCareInteractions() {
     environmentCarousel?.addEventListener("focusout", resumeCarousel);
     startAutoPlay();
 
+    const updateReviewDots = () => {
+      reviewDots.forEach((dot, dotIndex) => {
+        dot.setAttribute("aria-current", String(dotIndex === reviewIndex));
+      });
+    };
+
+    const stopReviewAutoPlay = () => {
+      if (reviewIntervalId) window.clearInterval(reviewIntervalId);
+      reviewIntervalId = undefined;
+    };
+
+    const moveReviewSlide = (index: number) => {
+      if (!reviewTrack || reviewSlideCount <= 0) return;
+      reviewIndex = (index + reviewSlideCount) % reviewSlideCount;
+      reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
+      updateReviewDots();
+    };
+
+    const startReviewAutoPlay = () => {
+      if (reviewSlideCount <= 1 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      stopReviewAutoPlay();
+      reviewIntervalId = window.setInterval(() => {
+        if (!isReviewCarouselPaused) moveReviewSlide(reviewIndex + 1);
+      }, 4600);
+    };
+
+    updateReviewDots();
+    startReviewAutoPlay();
+
+    const reviewDotHandlers = reviewDots.map((dot, index) => {
+      const handler = () => {
+        moveReviewSlide(index);
+        startReviewAutoPlay();
+      };
+      dot.addEventListener("click", handler);
+      return { dot, handler };
+    });
+
+    const reviewPreviousHandler = () => {
+      moveReviewSlide(reviewIndex - 1);
+      startReviewAutoPlay();
+    };
+    const reviewNextHandler = () => {
+      moveReviewSlide(reviewIndex + 1);
+      startReviewAutoPlay();
+    };
+    reviewPrev?.addEventListener("click", reviewPreviousHandler);
+    reviewNext?.addEventListener("click", reviewNextHandler);
+
+    const pauseReviewCarousel = () => {
+      isReviewCarouselPaused = true;
+    };
+    const resumeReviewCarousel = () => {
+      isReviewCarouselPaused = false;
+    };
+    reviewCarousel?.addEventListener("mouseenter", pauseReviewCarousel);
+    reviewCarousel?.addEventListener("mouseleave", resumeReviewCarousel);
+    reviewCarousel?.addEventListener("focusin", pauseReviewCarousel);
+    reviewCarousel?.addEventListener("focusout", resumeReviewCarousel);
+
     let resetButtonId: number | undefined;
     const submitHandler = (event: SubmitEvent) => {
       event.preventDefault();
@@ -158,8 +228,16 @@ export function PetCareInteractions() {
       environmentCarousel?.removeEventListener("mouseleave", resumeCarousel);
       environmentCarousel?.removeEventListener("focusin", pauseCarousel);
       environmentCarousel?.removeEventListener("focusout", resumeCarousel);
+      reviewDotHandlers.forEach(({ dot, handler }) => dot.removeEventListener("click", handler));
+      reviewPrev?.removeEventListener("click", reviewPreviousHandler);
+      reviewNext?.removeEventListener("click", reviewNextHandler);
+      reviewCarousel?.removeEventListener("mouseenter", pauseReviewCarousel);
+      reviewCarousel?.removeEventListener("mouseleave", resumeReviewCarousel);
+      reviewCarousel?.removeEventListener("focusin", pauseReviewCarousel);
+      reviewCarousel?.removeEventListener("focusout", resumeReviewCarousel);
       form?.removeEventListener("submit", submitHandler);
       if (intervalId) window.clearInterval(intervalId);
+      if (reviewIntervalId) window.clearInterval(reviewIntervalId);
       if (resetButtonId) window.clearTimeout(resetButtonId);
       if (firstSlideClone?.parentNode === environmentTrack) environmentTrack?.removeChild(firstSlideClone);
       if (lastSlideClone?.parentNode === environmentTrack) environmentTrack?.removeChild(lastSlideClone);
