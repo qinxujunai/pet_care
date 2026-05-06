@@ -54,7 +54,7 @@
         <aside class="booking-card" id="booking" aria-label="预约护理表单">
           <h2>预约护理</h2>
           <p class="sub">留下基础信息和期望到店时间，门店会按宠物状态确认合适时段。</p>
-          <form class="booking-form" id="bookingForm">
+          <form class="booking-form" id="bookingForm" method="post" action="/api/appointments">
             <label class="arrival-field">期望到店时间
               <input name="arrivalTime" type="datetime-local" required>
             </label>
